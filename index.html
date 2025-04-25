@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AtlasServer - Documentación</title>
+    <title>AtlasServer - Documentation</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Librería para convertir Markdown a HTML -->
+    <link rel="stylesheet" href="css/search.css">
+    <!-- Library for converting Markdown to HTML -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Opcional: para resaltado de código -->
+    <!-- Optional: for code highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </head>
@@ -23,7 +24,6 @@
         </div>
         <div class="header-actions">
             <a href="#" class="support-link">Support</a>
-            <a href="#" class="dashboard-btn">Dashboard</a>
         </div>
     </header>
 
@@ -33,27 +33,34 @@
                 <div class="nav-header">Guides</div>
                 <a href="#" class="nav-link active" data-doc="index">Introduction</a>
                 <a href="#" class="nav-link" data-doc="installation">Installation</a>
+                <a href="#" class="nav-link" data-doc="frameworks">Frameworks</a>
             </div>
             
             <div class="nav-section">
                 <div class="nav-header">API Reference</div>
                 <a href="#" class="nav-link" data-doc="api">API</a>
             </div>
+            
+            <div class="nav-section">
+                <div class="nav-header">Community</div>
+                <a href="https://github.com/AtlasServer-Core" target="_blank" class="nav-link">GitHub</a>
+            </div>
         </nav>
 
         <main id="content" class="content">
-            <!-- El contenido Markdown se cargará aquí -->
-            <div class="loading">Cargando documentación...</div>
+            <!-- Markdown content will be loaded here -->
+            <div class="loading">Loading documentation...</div>
         </main>
 
         <aside class="page-nav">
             <div class="page-nav-header">On this page</div>
             <div id="page-nav-links">
-                <!-- Links de navegación en página se generarán aquí -->
+                <!-- Page navigation links will be generated here -->
             </div>
         </aside>
     </div>
 
     <script src="js/docs.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
