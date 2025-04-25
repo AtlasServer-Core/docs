@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtlasServer - Documentación</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Librería para convertir Markdown a HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Opcional: para resaltado de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="logo">A</div>
+            <h1>AtlasServer</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search or ask..." class="search-input">
+            <span class="shortcut">Ctrl K</span>
+        </div>
+        <div class="header-actions">
+            <a href="#" class="support-link">Support</a>
+            <a href="#" class="dashboard-btn">Dashboard</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <nav class="sidebar">
+            <div class="nav-section">
+                <div class="nav-header">Guides</div>
+                <a href="#" class="nav-link active" data-doc="index">Introduction</a>
+                <a href="#" class="nav-link" data-doc="installation">Installation</a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-header">API Reference</div>
+                <a href="#" class="nav-link" data-doc="api">API</a>
+            </div>
+        </nav>
+
+        <main id="content" class="content">
+            <!-- El contenido Markdown se cargará aquí -->
+            <div class="loading">Cargando documentación...</div>
+        </main>
+
+        <aside class="page-nav">
+            <div class="page-nav-header">On this page</div>
+            <div id="page-nav-links">
+                <!-- Links de navegación en página se generarán aquí -->
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/docs.js"></script>
+</body>
+</html>
