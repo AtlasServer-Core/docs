@@ -84,7 +84,7 @@ function setupEventListeners() {
 // Load and index all documentation content
 function loadAllDocuments() {
   // List of all documentation files
-  const docFiles = ['index', 'installation', 'api', 'frameworks', 'troubleshooting', 'advanced', 'contributing'];
+  const docFiles = ['index', 'installation', 'api', 'frameworks'];
   
   // Load each document and add to search index
   docFiles.forEach(filename => {
@@ -132,6 +132,14 @@ function openSearch() {
   searchModal.style.display = 'block';
   searchInput.focus();
   document.body.style.overflow = 'hidden'; // Prevent scrolling
+  
+  // Force repaint to ensure modal is centered
+  setTimeout(() => {
+    searchModal.style.opacity = '0.99';
+    setTimeout(() => {
+      searchModal.style.opacity = '1';
+    }, 10);
+  }, 10);
 }
 
 // Close search modal
