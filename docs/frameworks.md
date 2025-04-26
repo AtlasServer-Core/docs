@@ -78,6 +78,61 @@ if __name__ == "__main__":
     uvicorn.run()
 ```
 
+## Python Virtual Environment Support
+
+AtlasServer supports running applications within Python virtual environments, ensuring proper isolation and dependency management for your projects.
+
+### Automatic Environment Detection
+
+When you specify a project directory, AtlasServer automatically scans for Python virtual environments:
+
+1. **Standard virtual environments** (venv, virtualenv)
+   - Directories named: `venv`, `.venv`, `env`, `.env`, `virtualenv`, `pyenv`
+   - Any directory containing `env` in its name
+
+2. **Poetry environments**
+   - Detected via `poetry.lock` or `pyproject.toml` files
+   - Typically located in `.venv` within your project
+
+3. **Pipenv environments**
+   - Detected via `Pipfile`
+   - Location determined by running `pipenv --venv`
+
+4. **Conda environments**
+   - Detected via `environment.yml`
+   - Matched with installed conda environments
+
+### Environment Configuration
+
+When registering an application, you can:
+
+1. **Use automatic detection** (recommended)
+   - Simply enter your project directory, and AtlasServer will detect and select the appropriate environment
+
+2. **Manually select an environment**
+   - Choose from detected environments in the dropdown menu under "Advanced Options"
+
+### Ensuring Proper Detection
+
+For reliable environment detection:
+
+- **Standard practice**: Create virtual environments in your project's root directory using standard names (`venv`, `.venv`) 
+- **Custom environments**: Include "env" somewhere in the folder name for custom environments
+- **Poetry/Pipenv**: Use the standard workflow (the environment will be detected automatically)
+- **Conda**: Include an `environment.yml` file in your project directory
+
+### Environment Support Example
+
+When using a virtual environment, your project structure might look like:
+
+```
+my_fastapi_project/
+├── .venv/                 # Virtual environment (auto-detected)
+├── app.py                 # Main application file
+├── requirements.txt       # Dependencies
+└── ...
+```
+
 ## Coming Soon to AtlasServer Core
 
 We're working on adding support for more Python frameworks:

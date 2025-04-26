@@ -15,6 +15,7 @@ AtlasServer is a local deployment platform designed for developers who need to q
 - **Real-time Logs**: View application logs directly in the dashboard
 - **Multi-user Support**: Manage access with different user roles and permissions
 - **Secure By Design**: Keep your development environment under your control, not in the cloud
+- **Python virtual environment**: Add Python virtual environment auto-detection
 
 ## Who is it for?
 
