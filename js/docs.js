@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configurar navegación
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
+            
+            if (this.getAttribute('target') === '_blank') {
+                return; // Permite que el enlace funcione normalmente
+            }
+
             e.preventDefault();
             const docName = this.getAttribute('data-doc');
             loadMarkdown(docName);
