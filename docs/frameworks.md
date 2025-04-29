@@ -78,6 +78,94 @@ if __name__ == "__main__":
     uvicorn.run()
 ```
 
+### Django
+
+Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. AtlasServer uses Gunicorn to serve Django applications.
+
+#### Requirements
+
+- A Django project with standard structure
+- Gunicorn (included in AtlasServer dependencies)
+- Django REST Framework (optional, for API development)
+
+#### Configuration
+
+When registering a Django application in AtlasServer:
+
+1. Set the **Application Type** to "django"
+2. For **Main File**, AtlasServer automatically sets this to `manage.py` 
+3. Ensure your project follows Django's standard structure:
+   ```
+   myproject/
+   ├── manage.py                # Entry point
+   ├── myproject/               # Project module
+   │   ├── __init__.py
+   │   ├── settings.py
+   │   ├── urls.py
+   │   └── wsgi.py              # Used by Gunicorn
+   └── app/                     # Your app(s)
+       ├── __init__.py
+       ├── models.py
+       └── views.py
+   ```
+
+#### Django REST Framework Support
+
+AtlasServer fully supports Django REST Framework for API development. No additional configuration is required beyond installing DRF in your project:
+
+```python
+# Installation
+pip install djangorestframework
+
+# Add to INSTALLED_APPS in settings.py
+INSTALLED_APPS = [
+    # ...
+    'rest_framework',
+]
+```
+
+#### Required Settings
+
+For proper operation with AtlasServer, make sure your `settings.py` includes:
+
+```python
+# Allow all hosts for demo purposes
+ALLOWED_HOSTS = ['*']  
+
+# Static files configuration
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+#### Example
+
+```python
+# views.py
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+# Standard Django view
+def hello_world(request):
+    return JsonResponse({"message": "Hello from Django!"})
+
+# Django REST Framework view
+@api_view(['GET'])
+def hello_api(request):
+    return Response({"message": "Hello from Django REST Framework!"})
+```
+
+```python
+# urls.py in your app
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('hello/', views.hello_world, name='hello_world'),
+    path('api/hello/', views.hello_api, name='hello_api'),
+]
+```
+
 ## Python Virtual Environment Support
 
 AtlasServer supports running applications within Python virtual environments, ensuring proper isolation and dependency management for your projects.
@@ -132,12 +220,6 @@ my_fastapi_project/
 ├── requirements.txt       # Dependencies
 └── ...
 ```
-
-## Coming Soon to AtlasServer Core
-
-We're working on adding support for more Python frameworks:
-
-- **Django**: For full-featured web applications
 
 ## Premium Features (Coming in Paid Version)
 

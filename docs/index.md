@@ -4,12 +4,12 @@
 
 ## What is AtlasServer?
 
-AtlasServer is a local deployment platform designed for developers who need to quickly share demos of their applications without complex cloud setups. It provides a centralized dashboard to manage, launch, and expose your Flask and FastAPI applications (with more frameworks coming soon) on your local network or to the internet via secure tunnels like Ngrok.
+AtlasServer is a local deployment platform designed for developers who need to quickly share demos of their applications without complex cloud setups. It provides a centralized dashboard to manage, launch, and expose your Flask, FastAPI, and Django applications on your local network or to the internet via secure tunnels like Ngrok.
 
 ## Key Features
 
 - **Fast Local Deployment**: Launch your applications with a single click through an intuitive web interface
-- **Framework Support**: Deploy Flask and FastAPI applications (with Django, Next.js, and more coming soon)
+- **Framework Support**: Deploy Flask, FastAPI, and Django applications (with Next.js and more coming in premium version)
 - **LAN & Internet Exposure**: Share your applications on your local network or expose them securely via Ngrok
 - **Process Management**: Start, stop, restart, and monitor your running applications
 - **Real-time Logs**: View application logs directly in the dashboard
