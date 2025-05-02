@@ -14,6 +14,7 @@ AtlasServer is a local deployment platform designed for developers who need to q
 - **Process Management**: Start, stop, restart, and monitor your running applications
 - **Real-time Logs**: View application logs directly in the dashboard
 - **Multi-user Support**: Manage access with different user roles and permissions
+- **Command Line Interface**: Manage your server and applications through a powerful CLI
 - **Secure By Design**: Keep your development environment under your control, not in the cloud
 - **Python virtual environment**: Add Python virtual environment auto-detection
 
@@ -30,11 +31,26 @@ AtlasServer is a local deployment platform designed for developers who need to q
 Getting started with AtlasServer is simple:
 
 1. Clone the repository
-2. Install dependencies
-3. Run the setup script
+2. Install AtlasServer: `pip install .`
+3. Start the server: `atlasserver start`
 4. Access your dashboard at http://localhost:5000
 
 Check out our [installation guide](#installation) for detailed instructions.
+
+## Command Line Interface
+
+AtlasServer includes a powerful CLI for managing both the server and your applications:
+
+```bash
+# Start the server
+atlasserver start
+
+# List all applications
+atlasserver app list
+
+# Start a specific application
+atlasserver app start 1
+```
 
 ## Join the Community
 

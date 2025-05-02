@@ -22,9 +22,27 @@ git clone https://github.com/AtlasServer-Core/AtlasServer-Core.git
 cd AtlasServer-Core
 ```
 
-### 2. Install Dependencies
+### 2. Install AtlasServer
 
-Install all required packages using pip:
+You can install AtlasServer in two ways:
+
+#### Option A: Install as a package (recommended)
+
+Install AtlasServer as a Python package:
+
+```bash
+pip install .
+```
+
+For development mode (editable install):
+
+```bash
+pip install -e .
+```
+
+#### Option B: Install dependencies only
+
+If you prefer not to install as a package:
 
 ```bash
 pip install -r requirements.txt
@@ -32,7 +50,24 @@ pip install -r requirements.txt
 
 ### 3. Start the Server
 
-Launch AtlasServer with the following command:
+#### Using CLI (recommended)
+
+If you installed AtlasServer as a package, you can use the CLI:
+
+```bash
+# Start the server
+atlasserver start
+
+# Check server status
+atlasserver status
+
+# Stop the server
+atlasserver stop
+```
+
+#### Manual start
+
+Alternatively, you can launch AtlasServer with:
 
 ```bash
 python -m uvicorn app.main:app --host 0.0.0.0 --port 5000
@@ -49,10 +84,32 @@ When you first access AtlasServer, you'll need to create an admin account:
 3. Create your administrator account
 4. You can then log in with your new credentials
 
+## Using the CLI
+
+AtlasServer includes a command-line interface for easier management:
+
+```bash
+# Get help
+atlasserver --help
+
+# Server management
+atlasserver start [--host HOST] [--port PORT] [--reload]
+atlasserver stop
+atlasserver status
+
+# Application management
+atlasserver app list
+atlasserver app start APP_ID
+atlasserver app stop APP_ID
+atlasserver app restart APP_ID
+atlasserver app info APP_ID
+```
+
 ## Optional Configuration
 
-- **Custom Port**: If you want to run AtlasServer on a different port, change the `--port` value in the startup command
-- **Development Mode**: Add `--reload` to the startup command for automatic reloading during development
+- **Custom Port**: Change the port by using `--port` option with the CLI or in the manual startup command
+- **Development Mode**: Add the `--reload` flag when starting the server
+- **Host Configuration**: Use `--host` to specify the network interface to bind to
 
 ## Troubleshooting
 
@@ -61,6 +118,7 @@ If you encounter any issues during installation:
 - Ensure all dependencies were installed correctly
 - Check that no other service is using port 5000
 - Verify you have appropriate permissions to run the server
+- Run `atlasserver status` to check if the server is already running
 
 For more detailed information or if you need help, please check our [GitHub repository](https://github.com/AtlasServer-Core/AtlasServer-Core) or open an issue.
 
