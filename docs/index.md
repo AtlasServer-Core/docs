@@ -30,10 +30,10 @@ AtlasServer is a local deployment platform designed for developers who need to q
 
 Getting started with AtlasServer is simple:
 
-1. Clone the repository
-2. Install AtlasServer: `pip install .`
-3. Start the server: `atlasserver start`
-4. Access your dashboard at http://localhost:5000
+1. Install AtlasServer: `pip install atlasserver`
+2. Start the server: `atlasserver start`
+3. Access your dashboard at http://localhost:5000
+4. Create your admin account and start managing your applications
 
 Check out our [installation guide](#installation) for detailed instructions.
 
@@ -55,6 +55,8 @@ atlasserver app start 1
 ## Join the Community
 
 AtlasServer is built by developers who understand the challenges of sharing demos with clients and stakeholders. We believe deployment shouldn't be a roadblock to innovation.
+
+Visit our [GitHub repository](https://github.com/AtlasServer-Core/AtlasServer-Core) to star the project, submit issues, or contribute to development.
 
 ---
 

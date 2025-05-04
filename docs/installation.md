@@ -7,52 +7,54 @@ This guide will help you set up AtlasServer on your local machine in just a few 
 Before installing AtlasServer, please make sure you have the following:
 
 - Python 3.8 or later
-- Git
 - pip (Python package manager)
 - A stable internet connection for downloading dependencies
 
-## Installation Steps
+## Installation Methods
 
-Follow these simple steps to get AtlasServer up and running:
+### Method 1: Install from PyPI (Recommended)
 
-### 1. Clone the Repository
+The easiest way to install AtlasServer is directly from PyPI:
+
+```bash
+pip install atlasserver
+```
+
+This will install AtlasServer and all its dependencies automatically.
+
+### Method 2: Install from Source
+
+If you want to install from source or contribute to the project:
+
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AtlasServer-Core/AtlasServer-Core.git
 cd AtlasServer-Core
 ```
 
-### 2. Install AtlasServer
+#### 2. Install AtlasServer
 
-You can install AtlasServer in two ways:
+You can install AtlasServer from source in two ways:
 
-#### Option A: Install as a package (recommended)
-
-Install AtlasServer as a Python package:
+**Option A: Install as a package (recommended for development)**
 
 ```bash
-pip install .
-```
-
-For development mode (editable install):
-
-```bash
+# For development mode (editable install)
 pip install -e .
 ```
 
-#### Option B: Install dependencies only
-
-If you prefer not to install as a package:
+**Option B: Install dependencies only**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Start the Server
+## Starting the Server
 
-#### Using CLI (recommended)
+### Using CLI (recommended)
 
-If you installed AtlasServer as a package, you can use the CLI:
+After installation, you can use the CLI:
 
 ```bash
 # Start the server
@@ -65,7 +67,7 @@ atlasserver status
 atlasserver stop
 ```
 
-#### Manual start
+### Manual start
 
 Alternatively, you can launch AtlasServer with:
 
