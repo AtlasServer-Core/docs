@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadMarkdown('index');
     
     // Configurar navegación
-    document.querySelectorAll('.nav-link').forEach(link => {
+    document.querySelectorAll('.nav-link, .mobile-menu-link').forEach(link => {
         link.addEventListener('click', function(e) {
             
             if (this.getAttribute('target') === '_blank') {
@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Actualizar navegación activa
             document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
-            this.classList.add('active');
+            document.querySelector(`.nav-link[data-doc="${docName}"]`).classList.add('active');
         });
     });
 });
 
 function loadMarkdown(filename) {
     const contentElement = document.getElementById('content');
-    contentElement.innerHTML = '<div class="loading">Cargando documentación...</div>';
+    contentElement.innerHTML = '<div class="loading">Loading documentation...</div>';
     
     fetch(`docs/${filename}.md`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('No se pudo cargar el archivo');
+                throw new Error('Failed to load file');
             }
             return response.text();
         })
@@ -59,7 +59,7 @@ function loadMarkdown(filename) {
         .catch(error => {
             contentElement.innerHTML = `
                 <div class="error">
-                    <h2>Error al cargar la documentación</h2>
+                    <h2>Error loading documentation</h2>
                     <p>${error.message}</p>
                 </div>
             `;

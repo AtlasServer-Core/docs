@@ -1,4 +1,4 @@
-/* search.css - Styles for search functionality */
+/* search.css - Estilos para búsqueda actualizado */
 
 /* Search modal */
 .search-modal {
@@ -18,17 +18,19 @@
 }
 
 .search-modal-content {
-    background-color: var(--card-bg);
+    background-color: rgba(17, 24, 39, 0.5);
     width: 90%;
     max-width: 700px;
-    border-radius: 8px;
+    border-radius: 0.75rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     max-height: 80vh;
     display: flex;
     flex-direction: column;
-    margin: 0 auto; /* Ensure horizontal centering */
-    position: relative; /* Ensure stacking context */
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
 }
 
 /* Search header */
@@ -102,7 +104,7 @@
 }
 
 .search-highlight {
-    background-color: rgba(138, 43, 226, 0.3);
+    background-color: rgba(59, 130, 246, 0.3);
     color: var(--primary-light);
     padding: 0 2px;
     border-radius: 2px;
@@ -112,7 +114,7 @@
 .search-shortcut {
     display: inline-block;
     padding: 2px 6px;
-    background-color: var(--card-bg);
+    background-color: rgba(31, 41, 55, 0.8);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 0.75rem;
